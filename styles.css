@@ -43,7 +43,11 @@ main {
     padding: 20px;
 }
 
-.question-container {
+.question-container, #juego {
+    display: none;
+}
+
+#menu-principal, .question-container {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
