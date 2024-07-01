@@ -67,14 +67,6 @@ function resetTimer() {
     document.getElementById('timer').textContent = timeLeft;
 }
 
-function startGame() {
-    document.getElementById('menu-principal').style.display = 'none';
-    document.getElementById('juego').style.display = 'block';
-    showQuestion();
-}
-
-document.getElementById('start-game-btn').addEventListener('click', startGame);
-
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('inicio').style.display = 'block';
+    showQuestion();
 });
