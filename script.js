@@ -1,72 +1,77 @@
-const questions = [
-    {
-        question: "¿Cuál es la capital de Francia?",
-        answers: ["París", "Londres", "Roma", "Madrid"],
-        correct: 0
-    },
-    {
-        question: "¿Quién escribió 'Cien años de soledad'?",
-        answers: ["Gabriel García Márquez", "Mario Vargas Llosa", "Julio Cortázar", "Jorge Luis Borges"],
-        correct: 0
-    },
-    // Agrega más preguntas aquí
-];
-
-let currentQuestionIndex = 0;
-let score = 0;
-let timeLeft = 10;
-let timerInterval;
-
-function showQuestion() {
-    const questionElement = document.getElementById('question');
-    const answerButtons = document.querySelectorAll('.answer-btn');
-    const currentQuestion = questions[currentQuestionIndex];
-
-    questionElement.textContent = currentQuestion.question;
-    answerButtons.forEach((button, index) => {
-        button.textContent = currentQuestion.answers[index];
-        button.onclick = () => selectAnswer(index);
-    });
-    
-    resetTimer();
-    startTimer();
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-function selectAnswer(selectedIndex) {
-    const correctAnswerIndex = questions[currentQuestionIndex].correct;
-    if (selectedIndex === correctAnswerIndex) {
-        score++;
-        document.getElementById('score').textContent = score;
-        alert("¡Correcto!");
-    } else {
-        alert("Incorrecto. La respuesta correcta es " + questions[currentQuestionIndex].answers[correctAnswerIndex]);
-    }
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();
-    } else {
-        clearInterval(timerInterval);
-        alert("¡Has terminado el juego! Tu puntaje es: " + score);
-    }
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
 }
 
-function startTimer() {
-    timeLeft = 10;
-    timerInterval = setInterval(() => {
-        timeLeft--;
-        document.getElementById('timer').textContent = timeLeft;
-        if (timeLeft <= 0) {
-            clearInterval(timerInterval);
-            selectAnswer(-1); // Simula respuesta incorrecta si se acaba el tiempo
-        }
-    }, 1000);
+nav {
+    background-color: #333;
 }
 
-function resetTimer() {
-    clearInterval(timerInterval);
-    document.getElementById('timer').textContent = timeLeft;
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    showQuestion();
-});
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #111;
+}
+
+main {
+    padding: 20px;
+}
+
+.question-container, #juego {
+    display: none;
+}
+
+#menu-principal, .question-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.answer-btn {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+}
+
+.answer-btn:hover {
+    background-color: #45a049;
+}
+
+.score-container, .timer-container {
+    margin-top: 20px;
+}
