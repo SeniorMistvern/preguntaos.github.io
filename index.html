@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de Preguntas</title>
+    <title>Menú Principal - Juego de Preguntas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,9 +13,8 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#menu-principal">Menú Principal</a></li>
-            <li><a href="#juego">Juego</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="juego.html">Juego</a></li>
             <li><a href="#creadores">Creadores</a></li>
         </ul>
     </nav>
@@ -26,28 +25,12 @@
         </section>
         <section id="menu-principal">
             <h2>Menú Principal</h2>
-            <button id="start-game-btn">Comenzar Juego</button>
-        </section>
-        <section id="juego" class="question-container">
-            <h2 id="question">Pregunta aquí</h2>
-            <div id="answers">
-                <button class="answer-btn">Respuesta 1</button>
-                <button class="answer-btn">Respuesta 2</button>
-                <button class="answer-btn">Respuesta 3</button>
-                <button class="answer-btn">Respuesta 4</button>
-            </div>
-            <div class="score-container">
-                <p>Puntaje: <span id="score">0</span></p>
-            </div>
-            <div class="timer-container">
-                <p>Tiempo restante: <span id="timer">10</span> segundos</p>
-            </div>
+            <button onclick="window.location.href='juego.html'">Comenzar Juego</button>
         </section>
         <section id="creadores">
             <h2>Acerca de los Creadores</h2>
             <p>Este juego fue creado por Emiliano y Rodrigo como parte de un proyecto escolar.</p>
         </section>
     </main>
-    <script src="script.js"></script>
 </body>
 </html>
