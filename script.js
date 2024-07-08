@@ -102,4 +102,15 @@ function resetTimer() {
 document.addEventListener('DOMContentLoaded', () => {
     shuffle(questions); // Baraja las preguntas antes de empezar
     showQuestion();
+    
+    const creadoresLink = document.getElementById('creadores-link');
+    const creadoresSection = document.getElementById('creadores');
+
+    creadoresLink.addEventListener('click', (event) => {
+        event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+        creadoresSection.style.display = 'block'; // Muestra la sección de los creadores
+        // Opcional: Oculta otras secciones si es necesario
+        document.getElementById('inicio').style.display = 'none';
+        document.getElementById('menu-principal').style.display = 'none';
+    });
 });
