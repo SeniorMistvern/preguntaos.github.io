@@ -9,13 +9,12 @@
 <body>
     <header>
         <h1>Juego de Preguntas</h1>
-        <p>Creado por Emiliano y Rodrigo</p>
     </header>
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="juego.html">Juego</a></li>
-            <li><a href="#creadores">Creadores</a></li>
+            <li><a href="#" id="creadores-link">Creadores</a></li>
         </ul>
     </nav>
     <main>
@@ -27,7 +26,14 @@
             <h2>Menú Principal</h2>
             <button onclick="window.location.href='juego.html'">Comenzar Juego</button>
         </section>
-        <section id="creadores">
+        <section id="creadores" style="display: none;">
+            <h2>Acerca de los Creadores</h2>
+            <p>Este juego fue creado por Emiliano y Rodrigo como parte de un proyecto escolar.</p>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
             <h2>Acerca de los Creadores</h2>
             <p>Este juego fue creado por Emiliano y Rodrigo como parte de un proyecto escolar.</p>
         </section>
