@@ -21,7 +21,7 @@ const questions = [
     },
     {
         question: "¿Cómo influyó la Ilustración en la Revolución Francesa y en el desarrollo de las democracias modernas?",
-        answers: ["Promovió ideas de igualdad", "Causó la caída del Imperio Romano", "Estableció el sistema feudal", "Fundó el Imperio Bizantino,"],
+        answers: ["Promovió ideas de igualdad", "Causó la caída del Imperio Romano", "Estableció el sistema feudal", "Fundó el Imperio Bizantino"],
         correct: 0
     },
     {
@@ -40,6 +40,14 @@ let currentQuestionIndex = 0;
 let score = 0;
 let timeLeft = 10;
 let timerInterval;
+
+// Función para barajar un array
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
 function showQuestion() {
     const questionElement = document.getElementById('question');
@@ -92,5 +100,6 @@ function resetTimer() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    shuffle(questions); // Baraja las preguntas antes de empezar
     showQuestion();
 });
